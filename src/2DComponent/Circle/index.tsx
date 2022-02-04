@@ -46,7 +46,8 @@ export default (props: BoxProps) => {
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}
     >
-      <boxGeometry args={[length, length, length]} />
+      {/* <sphereGeometry /> */}
+      <circleBufferGeometry args={[3, 1000]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   );
