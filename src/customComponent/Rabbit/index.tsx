@@ -1,25 +1,34 @@
-import React, { useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
+import React, { Suspense, useRef, useState } from 'react';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import type { MeshProps } from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-export default function Model(props) {
-  const group = useRef();
-  const { nodes, materials } = useGLTF('/Poimandres.gltf');
+type BoxProps = {
+  length: number;
+  autoRotate: boolean;
+  initRotation: string[];
+  position: string[];
+  scale: number;
+  rotateSpeed: [number, number, number];
+};
+
+const Model = () => {
+  console.log('loading~');
+
+  const gltf = useLoader(GLTFLoader, 'http://127.0.0.1:5500/public/Poimandres.gltf');
+  console.log('gltf', gltf);
+
   return (
-    <group ref={group} {...props} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Curve007_1.geometry}
-        material={materials['Material.001']}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Curve007_2.geometry}
-        material={materials['Material.002']}
-      />
-    </group>
+    <>
+      <primitive object={gltf.scene} scale={0.4} />
+    </>
   );
-}
+};
 
-useGLTF.preload('/Poimandres.gltf');
+export default (props: BoxProps) => {
+  return (
+    <Suspense fallback={null}>
+      <Model />
+    </Suspense>
+  );
+};
