@@ -4,24 +4,23 @@ nav:
   path: /components
 ---
 
-## Sphere （球体）
+## Gltf组件
 
 ## 何时使用
 
-- 需要一个球体。
-- 球体可以旋转，自定义变换位置。
+- 需要加载自定义 Gltf 组件 Model 
 
 ### 基本使用
 
 ```tsx
 import React from 'react';
-import { Rabbit } from 'Eva-Design';
+import { GltfModel } from 'Eva-Design';
 import { Canvas } from '@react-three/fiber';
 
 export default () => {
   return (
     <Canvas>
-      <Rabbit />
+      <GltfModel />
     </Canvas>
   );
 };

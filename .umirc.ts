@@ -28,7 +28,7 @@ export default {
       },
       {
         title: '自定义组件',
-        children: ['/customComponent/Rabbit'],
+        children: ['/customComponent/Gltf','/customComponent/Obj'],
       },
     ],
     // // 如果该路径有其他语言，需在前面加上语言前缀，需与 locales 配置中的路径一致

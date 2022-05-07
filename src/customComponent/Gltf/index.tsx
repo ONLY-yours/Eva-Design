@@ -12,12 +12,8 @@ type BoxProps = {
   rotateSpeed: [number, number, number];
 };
 
-const Model = () => {
-  console.log('loading~');
-
+const CustomGltfModel = () => {
   const gltf = useLoader(GLTFLoader, 'http://127.0.0.1:5500/public/Poimandres.gltf');
-  console.log('gltf', gltf);
-
   return (
     <>
       <primitive object={gltf.scene} scale={0.4} />
@@ -28,7 +24,7 @@ const Model = () => {
 export default (props: BoxProps) => {
   return (
     <Suspense fallback={null}>
-      <Model />
+      <CustomGltfModel />
     </Suspense>
   );
 };
