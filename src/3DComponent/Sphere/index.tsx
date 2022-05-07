@@ -11,7 +11,7 @@ type BoxProps = {
   rotateSpeed: [number, number, number];
 };
 
-export default (props: BoxProps) => {
+const Sphere = (props: BoxProps) => {
   const {
     autoRotate = false,
     length = 3,
@@ -46,8 +46,9 @@ export default (props: BoxProps) => {
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}
     >
-      <sphereGeometry />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      <sphereGeometry args={[length]} />
     </mesh>
   );
 };
+
+export { Sphere };

@@ -4,7 +4,7 @@ nav:
   path: /components
 ---
 
-## Light（光源）
+## Mesh（网格）
 
 ## 何时使用
 

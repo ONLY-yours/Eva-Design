@@ -11,10 +11,10 @@ type BoxProps = {
   rotateSpeed: [number, number, number];
 };
 
-export default (props: BoxProps) => {
+const Cylinder = (props: BoxProps) => {
   const {
     autoRotate = false,
-    length = 3,
+    length = 2,
     scale = 1,
     initRotation = [0, 0, 0],
     position = [0, 0, 0],
@@ -46,8 +46,10 @@ export default (props: BoxProps) => {
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}
     >
-      <cylinderGeometry />
+      <cylinderGeometry args={[length, length, length]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   );
 };
+
+export { Cylinder };

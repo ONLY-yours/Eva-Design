@@ -11,7 +11,7 @@ type BoxProps = {
   rotateSpeed: [number, number, number];
 };
 
-export default (props: BoxProps) => {
+const Box = (props: MeshProps & BoxProps) => {
   const {
     autoRotate = false,
     length = 3,
@@ -19,6 +19,7 @@ export default (props: BoxProps) => {
     initRotation = [0, 0, 0],
     position = [0, 0, 0],
     rotateSpeed = [0.01, 0.005, 0.005],
+    ...rest
   } = props;
 
   const [xRotateSpeed, yRotateSpeed, zRotateSpeed] = rotateSpeed;
@@ -45,10 +46,12 @@ export default (props: BoxProps) => {
       onClick={(event) => click(!clicked)}
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}
+      {...rest}
     >
       <boxGeometry args={[length, length, length]} />
-      {/* <boxGeometry args={[1, 1, 1]} /> */}
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   );
 };
+
+export { Box };
