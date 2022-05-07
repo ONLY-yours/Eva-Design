@@ -1,30 +1,28 @@
-import React, { Suspense, useRef, useState } from 'react';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
-import type { MeshProps } from '@react-three/fiber';
+import React, { Suspense } from 'react';
+import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 
-type BoxProps = {
-  length: number;
-  autoRotate: boolean;
-  initRotation: string[];
-  position: string[];
-  scale: number;
-  rotateSpeed: [number, number, number];
-};
-
-const CustomGltfModel = () => {
+const CustomObjModel = () => {
   const gltf = useLoader(GLTFLoader, 'http://127.0.0.1:5500/public/Poimandres.gltf');
+  const materials = useLoader(MTLLoader, 'http://127.0.0.1:5500/public/Blank.mtl');
+
+  const obj = useLoader(OBJLoader, 'http://127.0.0.1:5500/public/rabbit.obj', (loader) => {
+    materials.preload();
+    loader.setMaterials(materials);
+  });
   return (
     <>
-      <primitive object={gltf.scene} scale={0.4} />
+      <primitive object={obj} scale={0.4} />
     </>
   );
 };
 
-export default (props: BoxProps) => {
+export default () => {
   return (
     <Suspense fallback={null}>
-      <CustomGltfModel />
+      <CustomObjModel />
     </Suspense>
   );
 };

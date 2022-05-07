@@ -15,16 +15,14 @@ nav:
 
 ```tsx
 import React from 'react';
-import { Sphere } from 'Eva-Design';
-import { Canvas } from '@react-three/fiber';
+import { Sphere, BasicProvider, PointLight } from 'Eva-Design';
 
 export default () => {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+    <BasicProvider>
+      <PointLight position={[10, 10, 10]} />
       <Sphere />
-    </Canvas>
+    </BasicProvider>
   );
 };
 ```

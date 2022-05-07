@@ -1,3 +1,6 @@
+export { BasicProvider } from './basic/Provider';
+export { AmbientLight, PointLight } from './basic/Light';
+
 export { default as Box } from './3DComponent/Box';
 export { default as Sphere } from './3DComponent/Sphere';
 export { default as Cylinder } from './3DComponent/Cylinder';

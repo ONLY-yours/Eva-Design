@@ -15,16 +15,14 @@ nav:
 
 ```tsx
 import React from 'react';
-import { Box } from 'Eva-Design';
-import { Canvas } from '@react-three/fiber';
+import { Box, BasicProvider, PointLight } from 'Eva-Design';
 
 export default () => {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+    <BasicProvider>
+      <PointLight position={[10, 10, 10]} />
       <Box initRotation={[0.5, 0.5, 0]} />
-    </Canvas>
+    </BasicProvider>
   );
 };
 ```
@@ -35,16 +33,14 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box } from 'Eva-Design';
-import { Canvas } from '@react-three/fiber';
+import { Box, BasicProvider, PointLight } from 'Eva-Design';
 
 export default () => {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+    <BasicProvider>
+      <PointLight position={[10, 10, 10]} />
       <Box autoRotate={true} />
-    </Canvas>
+    </BasicProvider>
   );
 };
 ```
@@ -55,16 +51,13 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box } from 'Eva-Design';
-import { Canvas } from '@react-three/fiber';
-
+import { Box, BasicProvider, PointLight } from 'Eva-Design';
 export default () => {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+    <BasicProvider>
+      <PointLight position={[10, 10, 10]} />
       <Box length={2} initRotation={[0.5, 0.5, 0]} />
-    </Canvas>
+    </BasicProvider>
   );
 };
 ```
@@ -77,16 +70,14 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box } from 'Eva-Design';
-import { Canvas } from '@react-three/fiber';
+import { Box, BasicProvider, PointLight } from 'Eva-Design';
 
 export default () => {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+    <BasicProvider>
+      <PointLight position={[10, 10, 10]} />
       <Box initRotation={[1, 0, 0.5]} />
-    </Canvas>
+    </BasicProvider>
   );
 };
 ```
@@ -99,19 +90,17 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box } from 'Eva-Design';
-import { Canvas } from '@react-three/fiber';
+import { Box, BasicProvider, PointLight } from 'Eva-Design';
 
 export default () => {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[0, 0, 0]} />
+    <BasicProvider>
+      <PointLight position={[0, 0, 0]} />
       <Box scale={0.5} initRotation={[0, 0, 0]} position={[2, 2, 0]} />
       <Box scale={0.5} initRotation={[0, 0, 0]} position={[-2, 2, 0]} />
       <Box scale={0.5} initRotation={[0, 0, 0]} position={[2, -2, 0]} />
       <Box scale={0.5} initRotation={[0, 0, 0]} position={[-2, -2, 0]} />
-    </Canvas>
+    </BasicProvider>
   );
 };
 ```

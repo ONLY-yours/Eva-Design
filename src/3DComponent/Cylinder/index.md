@@ -15,16 +15,14 @@ nav:
 
 ```tsx
 import React from 'react';
-import { Cylinder } from 'Eva-Design';
-import { Canvas } from '@react-three/fiber';
+import { Cylinder, BasicProvider, PointLight } from 'Eva-Design';
 
 export default () => {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+    <BasicProvider>
+      <PointLight position={[10, 10, 10]} />
       <Cylinder initRotation={[0.5, 0.5, 0]} />
-    </Canvas>
+    </BasicProvider>
   );
 };
 ```

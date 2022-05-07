@@ -13,6 +13,15 @@ export default {
     // 需要自定义侧边菜单的路径，没有配置的路径还是会使用自动生成的配置
     '/components': [
       {
+        title: '基本组件',
+        children: [
+          // 菜单子项（可选）
+          // 对应的 Markdown 文件，路径是相对于 resolve.includes 目录识别的
+          '/basic/Provider',
+          '/basic/Light',
+        ],
+      },
+      {
         title: '3D组件',
         children: [
           // 菜单子项（可选）
@@ -28,7 +37,7 @@ export default {
       },
       {
         title: '自定义组件',
-        children: ['/customComponent/Gltf','/customComponent/Obj'],
+        children: ['/customComponent/Gltf', '/customComponent/Obj'],
       },
     ],
     // // 如果该路径有其他语言，需在前面加上语言前缀，需与 locales 配置中的路径一致
