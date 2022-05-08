@@ -118,3 +118,4 @@ export default () => {
 | initRotation | 默认初始化时候立方体的旋转角度 | string[x: number,y: number: z: number] | [0, 0, 0] |
 | position | 立方体所处的位置 | string[x: number,y: number: z: number] | [0, 0, 0] |
 | scale | 立方体缩放的比例 | number | 1 |
+| materialRender | 通用整体 Mesh 的 material 材质导入 | function | - |

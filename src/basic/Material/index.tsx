@@ -11,7 +11,7 @@ type BasicProviderProps = {
   defaultLightSetting: boolean | any;
 };
 
-const Material = () => {
+const Material = (props: BasicProviderProps) => {
   return (
     <>
       <material />
@@ -35,4 +35,8 @@ const MeshLambertMaterial = () => {
   );
 };
 
-export { Material, MeshBasicMaterial, MeshLambertMaterial };
+const MeshStandardMaterial = (props) => {
+  return <meshStandardMaterial {...props} />;
+};
+
+export { Material, MeshBasicMaterial, MeshLambertMaterial, MeshStandardMaterial };

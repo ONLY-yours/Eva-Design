@@ -48,7 +48,7 @@ export default (props: BoxProps) => {
     >
       {/* <sphereGeometry /> */}
       <circleBufferGeometry args={[3, 1000]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      <meshBasicMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   );
 };

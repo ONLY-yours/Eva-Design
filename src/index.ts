@@ -1,6 +1,12 @@
 export { BasicProvider } from './basic/Provider';
+export { BasicMesh } from './basic/Mesh';
 export { AmbientLight, PointLight } from './basic/Light';
-export { Material, MeshBasicMaterial, MeshLambertMaterial } from './basic/Meterial';
+export {
+  Material,
+  MeshBasicMaterial,
+  MeshLambertMaterial,
+  MeshStandardMaterial,
+} from './basic/Material';
 
 export { Box } from './3DComponent/Box';
 export { Sphere } from './3DComponent/Sphere';

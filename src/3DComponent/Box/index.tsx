@@ -1,56 +1,19 @@
-import React, { useRef, useState } from 'react';
-import { useFrame } from '@react-three/fiber';
-import type { MeshProps } from '@react-three/fiber';
+import React from 'react';
+import { BasicMesh, BasicMeshProps } from '../../basic/Mesh';
+import { MeshStandardMaterial } from '../../basic/Material';
 
-type BoxProps = {
-  length: number;
-  autoRotate: boolean;
-  initRotation: string[];
-  position: string[];
-  scale: number;
-  rotateSpeed: [number, number, number];
+const BasicBox = (props: BasicMeshProps) => {
+  const { length = 3, ...rest } = props;
+
+  return <boxGeometry args={[length, length, length]} />;
 };
 
-const Box = (props: MeshProps & BoxProps) => {
-  const {
-    autoRotate = false,
-    length = 3,
-    scale = 1,
-    initRotation = [0, 0, 0],
-    position = [0, 0, 0],
-    rotateSpeed = [0.01, 0.005, 0.005],
-    ...rest
-  } = props;
-
-  const [xRotateSpeed, yRotateSpeed, zRotateSpeed] = rotateSpeed;
-
-  const ref = useRef<MeshProps>();
-
-  const [hovered, hover] = useState(false);
-  const [clicked, click] = useState(false);
-
-  useFrame((state, delta) => {
-    if (autoRotate && ref.current) {
-      ref.current.rotation.x += xRotateSpeed;
-      ref.current.rotation.y += yRotateSpeed;
-      ref.current.rotation.z += zRotateSpeed;
-    }
-  });
-
+const Box = (props: BasicMeshProps) => {
   return (
-    <mesh
-      ref={ref}
-      position={position}
-      rotation={initRotation}
-      scale={[scale, scale, scale]}
-      onClick={(event) => click(!clicked)}
-      onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}
-      {...rest}
-    >
-      <boxGeometry args={[length, length, length]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
+    <BasicMesh {...props}>
+      <BasicBox {...props} />
+      <MeshStandardMaterial color={'orange'} />
+    </BasicMesh>
   );
 };
 

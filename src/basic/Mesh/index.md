@@ -8,11 +8,9 @@ nav:
 
 ## 何时使用
 
-- 当你需要加载光源的时候可以添加使用。
-
-## AmbientLight 环境光
-
-> tips： 我们会在组件中默认加入环境光，因此如果需要完全自定义，请在 BasicProvider 中先关闭默认环境光，不然光照效果可能会被叠加从而不是你需要的模式。
+- 需要加载 3D 模型的时候。
+- 需要注意的是，3D 模型一定要加载在 Mesh 中，否则可能会出现无法渲染的情况。
+- Eva-Design 提供的所有基本模型都会包裹 Mesh，部分 BasicProvider 的 Api 就是用于控制 Mesh 中的部分参数的，例如 Scale、autoSpin。我们认为用户不需要每次都手动感知是否添加 Mesh，当你不需要的时候，可以通过 Api 来关闭它。
 
 ```tsx
 import React from 'react';
