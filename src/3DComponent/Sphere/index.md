@@ -11,6 +11,8 @@ nav:
 - 需要一个球体。
 - 球体可以旋转，自定义变换位置。
 
+> 注意：球体部分 Api 需要特殊情况下才能看得出，例如 autoSpin 自动旋转、initRotation 旋转偏移量，这两个参数在完整球体的情况下不太好观察。但是 Api 是支持的，需要根据情况适时使用。
+
 ### 基本使用
 
 ```tsx
@@ -27,25 +29,7 @@ export default () => {
 };
 ```
 
-### 开启自动旋转
-
-通过设定 `autoSpin` 为 `true` 来打开自动旋转。
-
-```tsx
-import React from 'react';
-import { Sphere, BasicProvider, PointLight } from 'Eva-Design';
-
-export default () => {
-  return (
-    <BasicProvider>
-      <PointLight position={[10, 10, 10]} />
-      <Sphere autoRotate={true} />
-    </BasicProvider>
-  );
-};
-```
-
-### 手动指定立方体的棱长
+### 手动指定球体半径
 
 通过指定 `length` 来自定义立方体的棱长。
 

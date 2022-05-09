@@ -34,6 +34,6 @@ export default () => {
 
 ## API
 
-| 参数                | 说明         | 类型                        | 默认值 |
-| ------------------- | ------------ | --------------------------- | ------ |
-| defaultLightSetting | 默认光源设置 | `true \| LightSettingProps` | true   |
+| 参数                | 说明         | 类型                           | 默认值 |
+| ------------------- | ------------ | ------------------------------ | ------ |
+| defaultLightSetting | 默认光源设置 | `boolean \| LightSettingProps` | true   |

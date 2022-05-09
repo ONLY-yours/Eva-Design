@@ -4,7 +4,7 @@ nav:
   path: /components
 ---
 
-## Meterial（材质）
+## Material（材质）
 
 ## 何时使用
 

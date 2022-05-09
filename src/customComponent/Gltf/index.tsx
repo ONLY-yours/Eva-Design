@@ -2,6 +2,7 @@ import React, { Suspense, useRef, useState } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import type { MeshProps } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { BasicMesh } from '../../basic/Mesh';
 
 type BoxProps = {
   length: number;
@@ -23,8 +24,10 @@ const CustomGltfModel = () => {
 
 export default (props: BoxProps) => {
   return (
-    <Suspense fallback={null}>
-      <CustomGltfModel />
-    </Suspense>
+    <BasicMesh {...props}>
+      <Suspense fallback={null}>
+        <CustomGltfModel />
+      </Suspense>
+    </BasicMesh>
   );
 };

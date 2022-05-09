@@ -112,7 +112,7 @@ export default () => {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| length | 棱线边界长度 | `number` | 3 |
+| length | 棱线边界长度 or 半径等基线长度 | `number` | 3 |
 | autoRotate | 是否需要自动旋转 | `boolean` | false |
 | rotateSpeed | 旋转速率（仅当自动旋转打开时生效） | string[xSpeed: number, ySpeed: number , zSpeed: numer] | [ 0.01 , 0.005 , 0.05 ] |
 | initRotation | 默认初始化时候立方体的旋转角度 | string[x: number,y: number: z: number] | [0, 0, 0] |

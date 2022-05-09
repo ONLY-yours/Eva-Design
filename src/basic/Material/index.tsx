@@ -1,36 +1,25 @@
 import React from 'react';
-import { Canvas } from '@react-three/fiber';
 
-type BasicProviderProps = {
-  children: any;
-  /**
-   * @description 是否采用默认点光源配置
-   * @type {boolean}
-   * @default true
-   *  */
-  defaultLightSetting: boolean | any;
-};
-
-const Material = (props: BasicProviderProps) => {
+const Material = (props) => {
   return (
     <>
-      <material />
+      <material {...props} />
     </>
   );
 };
 
-const MeshBasicMaterial = () => {
+const MeshBasicMaterial = (props) => {
   return (
     <>
-      <meshBasicMaterial />
+      <meshBasicMaterial {...props} />
     </>
   );
 };
 
-const MeshLambertMaterial = () => {
+const MeshLambertMaterial = (props) => {
   return (
     <>
-      <meshLambertMaterial />
+      <meshLambertMaterial {...props} />
     </>
   );
 };

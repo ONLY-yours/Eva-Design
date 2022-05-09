@@ -10,6 +10,7 @@ export type BasicMeshProps = {
   scale: number;
   rotateSpeed: [number, number, number];
   materialRender: Function;
+  meshSetting: boolean | any;
 };
 
 const BasicMesh = (props: BasicMeshProps & MeshProps & any) => {
@@ -21,6 +22,7 @@ const BasicMesh = (props: BasicMeshProps & MeshProps & any) => {
     position = [0, 0, 0],
     rotateSpeed = [0.01, 0.005, 0.005],
     materialRender,
+    meshSetting = true,
     ...rest
   } = props;
 
@@ -39,7 +41,7 @@ const BasicMesh = (props: BasicMeshProps & MeshProps & any) => {
     }
   });
 
-  return (
+  return meshSetting ? (
     <mesh
       ref={ref}
       position={position}
@@ -57,6 +59,15 @@ const BasicMesh = (props: BasicMeshProps & MeshProps & any) => {
         <MeshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
       )}
     </mesh>
+  ) : (
+    <>
+      {props.children}
+      {materialRender ? (
+        materialRender
+      ) : (
+        <MeshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      )}
+    </>
   );
 };
 
