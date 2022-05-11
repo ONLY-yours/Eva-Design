@@ -34,6 +34,7 @@ export default {
           '/3DComponent/Box',
           '/3DComponent/Cylinder',
           '/3DComponent/Sphere',
+          '/3DComponent/Cone',
         ],
       },
       {

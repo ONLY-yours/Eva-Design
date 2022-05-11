@@ -16,11 +16,10 @@ const BasicProvider = (props: BasicProviderProps) => {
   return (
     <Canvas>
       <>
-        {props.children.map((item) => {
-          if (item.type.name === 'Sphere') {
-            console.log('setProps');
-            return item;
-          }
+        {props.children.map((item: any) => {
+          // if (item.type.name === 'Sphere') {
+          //   return item;
+          // }
           return item;
         })}
         {defaultLightSetting && <ambientLight {...defaultLightSetting} />}

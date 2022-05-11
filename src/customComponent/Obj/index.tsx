@@ -8,7 +8,7 @@ const CustomObjModel = () => {
   const gltf = useLoader(GLTFLoader, 'http://127.0.0.1:5500/public/Poimandres.gltf');
   const materials = useLoader(MTLLoader, 'http://127.0.0.1:5500/public/Blank.mtl');
 
-  const obj = useLoader(OBJLoader, 'http://127.0.0.1:5500/public/rabbit.obj', (loader) => {
+  const obj = useLoader(OBJLoader, 'http://127.0.0.1:5500/public/rabbit.obj', (loader: any) => {
     materials.preload();
     loader.setMaterials(materials);
   });

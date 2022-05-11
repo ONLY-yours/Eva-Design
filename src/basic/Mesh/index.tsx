@@ -5,13 +5,13 @@ import { MeshStandardMaterial } from '../Material';
 export type BasicMeshProps = {
   length: number;
   autoRotate: boolean;
-  initRotation: string[];
-  position: string[];
+  initRotation: string[] | any;
+  position: string[] | any;
   scale: number;
   rotateSpeed: [number, number, number];
   materialRender: Function;
   meshSetting: boolean | any;
-};
+} & any;
 
 const BasicMesh = (props: BasicMeshProps & MeshProps & any) => {
   const {
@@ -28,13 +28,13 @@ const BasicMesh = (props: BasicMeshProps & MeshProps & any) => {
 
   const [xRotateSpeed, yRotateSpeed, zRotateSpeed] = rotateSpeed;
 
-  const ref = useRef<MeshProps>();
+  const ref = useRef<MeshProps | any>();
 
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
 
   useFrame((state, delta) => {
-    if (autoRotate && ref.current) {
+    if (autoRotate && ref.current && ref.current.rotation) {
       ref.current.rotation.x += xRotateSpeed;
       ref.current.rotation.y += yRotateSpeed;
       ref.current.rotation.z += zRotateSpeed;

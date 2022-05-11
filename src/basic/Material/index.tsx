@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Material = (props) => {
+const Material = (props: any) => {
   return (
     <>
       <material {...props} />
@@ -8,7 +8,7 @@ const Material = (props) => {
   );
 };
 
-const MeshBasicMaterial = (props) => {
+const MeshBasicMaterial = (props: any) => {
   return (
     <>
       <meshBasicMaterial {...props} />
@@ -16,7 +16,7 @@ const MeshBasicMaterial = (props) => {
   );
 };
 
-const MeshLambertMaterial = (props) => {
+const MeshLambertMaterial = (props: any) => {
   return (
     <>
       <meshLambertMaterial {...props} />
@@ -24,7 +24,7 @@ const MeshLambertMaterial = (props) => {
   );
 };
 
-const MeshStandardMaterial = (props) => {
+const MeshStandardMaterial = (props: any) => {
   return <meshStandardMaterial {...props} />;
 };
 

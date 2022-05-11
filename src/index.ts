@@ -11,6 +11,7 @@ export {
 export { Box } from './3DComponent/Box';
 export { Sphere } from './3DComponent/Sphere';
 export { Cylinder } from './3DComponent/Cylinder';
+export { Cone } from './3DComponent/Cone';
 
 export { default as Circle } from './2DComponent/Circle';
 
