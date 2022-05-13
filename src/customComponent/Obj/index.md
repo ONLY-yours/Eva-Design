@@ -20,8 +20,32 @@ import { Canvas } from '@react-three/fiber';
 export default () => {
   return (
     <Canvas>
-      <ObjModel />
+      <ObjModel
+        scale={0.02}
+        url="http://127.0.0.1:5500/public/EVA.obj"
+        materialUrl="http://127.0.0.1:5500/public/EVA.mtl"
+      />
     </Canvas>
   );
 };
 ```
+
+<!-- ### 调整缩放
+
+```tsx
+import React from 'react';
+import { ObjModel } from 'Eva-Design';
+import { Canvas } from '@react-three/fiber';
+
+export default () => {
+  return (
+    <Canvas>
+      <ObjModel
+        scale={0.02}
+        url="http://127.0.0.1:5500/public/evaObj.obj"
+        materialUrl="http://127.0.0.1:5500/public/EVA.mtl"
+      />
+    </Canvas>
+  );
+};
+``` -->

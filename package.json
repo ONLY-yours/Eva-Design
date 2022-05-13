@@ -26,6 +26,7 @@
     ]
   },
   "dependencies": {
+    "@react-three/drei": "^4.1.8",
     "@react-three/fiber": "^7.0.24",
     "react": "^16.12.0 || ^17.0.0",
     "three": "^0.135.0"

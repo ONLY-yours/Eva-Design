@@ -3,26 +3,46 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
+import { BaseCustomComponentProps } from '../utils';
+import { Environment, OrbitControls } from '@react-three/drei';
 
-const CustomObjModel = () => {
-  const gltf = useLoader(GLTFLoader, 'http://127.0.0.1:5500/public/Poimandres.gltf');
-  const materials = useLoader(MTLLoader, 'http://127.0.0.1:5500/public/Blank.mtl');
+type ObjComProps = {
+  /**
+   * @param {string} url
+   * @description 主结构的加载url链接
+   */
+  url: string;
+  /**
+   * @param {string} materialUrl
+   * @description 部分需要加载material材质的url链接
+   */
+  materialUrl: string;
+} & BaseCustomComponentProps;
 
-  const obj = useLoader(OBJLoader, 'http://127.0.0.1:5500/public/rabbit.obj', (loader: any) => {
+const CustomObjModel = (props: ObjComProps) => {
+  const { url, materialUrl, scale = 0.04 } = props;
+
+  const materials = useLoader(MTLLoader, materialUrl);
+
+  const obj = useLoader(OBJLoader, url, (loader: any) => {
     materials.preload();
     loader.setMaterials(materials);
   });
   return (
     <>
-      <primitive object={obj} scale={0.4} />
+      <primitive object={obj} scale={scale} />
     </>
   );
 };
 
-export default () => {
+const ObjModel = (props: ObjComProps) => {
   return (
     <Suspense fallback={null}>
-      <CustomObjModel />
+      <Environment preset="sunset" background />
+      <OrbitControls />
+      <CustomObjModel {...props} />
     </Suspense>
   );
 };
+
+export { ObjModel };

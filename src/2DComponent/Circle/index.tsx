@@ -2,7 +2,7 @@ import React from 'react';
 import { BasicMesh, BasicMeshProps } from '../../basic/Mesh';
 import { MeshStandardMaterial } from '../../basic/Material';
 
-export default (props: BasicMeshProps) => {
+const Circle = (props: BasicMeshProps) => {
   return (
     <BasicMesh {...props}>
       <circleBufferGeometry args={[3, 1000]} />
@@ -10,3 +10,5 @@ export default (props: BasicMeshProps) => {
     </BasicMesh>
   );
 };
+
+export { Circle };

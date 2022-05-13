@@ -12,8 +12,9 @@ export { Box } from './3DComponent/Box';
 export { Sphere } from './3DComponent/Sphere';
 export { Cylinder } from './3DComponent/Cylinder';
 export { Cone } from './3DComponent/Cone';
+export { Dodecahedron } from './3DComponent/Dodecahedron';
 
-export { default as Circle } from './2DComponent/Circle';
+export { Circle } from './2DComponent/Circle';
 
-export { default as GltfModel } from './customComponent/Gltf';
-export { default as ObjModel } from './customComponent/Obj';
+export { GltfModel } from './customComponent/Gltf';
+export { ObjModel } from './customComponent/Obj';
