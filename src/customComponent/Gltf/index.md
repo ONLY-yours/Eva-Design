@@ -4,17 +4,17 @@ nav:
   path: /components
 ---
 
-## Gltf组件
+## Gltf 组件
 
 ## 何时使用
 
-- 需要加载自定义 Gltf 组件 Model 
+- 需要加载自定义 Gltf 组件 Model
 
 ### 基本使用
 
 ```tsx
 import React from 'react';
-import { GltfModel } from 'Eva-Design';
+import { GltfModel } from 'eva-design-three';
 import { Canvas } from '@react-three/fiber';
 
 export default () => {

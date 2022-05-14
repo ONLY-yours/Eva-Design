@@ -10,13 +10,13 @@ nav:
 
 - 需要加载 3D 模型的时候。
 - 需要注意的是，3D 模型一定要加载在 Mesh 中，否则可能会出现无法渲染的情况。
-- Eva-Design 提供的所有基本模型都会包裹 Mesh，部分 BasicProvider 的 Api 就是用于控制 Mesh 中的部分参数的，例如 Scale、autoSpin。我们认为用户不需要每次都手动感知是否添加 Mesh，当你不需要的时候，可以通过 Api 来关闭它。
+- eva-design-three 提供的所有基本模型都会包裹 Mesh，部分 BasicProvider 的 Api 就是用于控制 Mesh 中的部分参数的，例如 Scale、autoSpin。我们认为用户不需要每次都手动感知是否添加 Mesh，当你不需要的时候，可以通过 Api 来关闭它。
 
 ## 基本使用
 
 ```tsx
 import React from 'react';
-import { BasicProvider, Box, AmbientLight, BasicMesh } from 'Eva-Design';
+import { BasicProvider, Box, AmbientLight, BasicMesh } from 'eva-design-three';
 
 export default () => {
   return (
@@ -32,7 +32,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { BasicProvider, Box, PointLight, BasicMesh } from 'Eva-Design';
+import { BasicProvider, Box, PointLight, BasicMesh } from 'eva-design-three';
 
 export default () => {
   return (

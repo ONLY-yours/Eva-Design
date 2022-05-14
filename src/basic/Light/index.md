@@ -16,7 +16,7 @@ nav:
 
 ```tsx
 import React from 'react';
-import { BasicProvider, Box, AmbientLight } from 'Eva-Design';
+import { BasicProvider, Box, AmbientLight } from 'eva-design-three';
 
 export default () => {
   return (
@@ -32,7 +32,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { BasicProvider, Box, PointLight } from 'Eva-Design';
+import { BasicProvider, Box, PointLight } from 'eva-design-three';
 
 export default () => {
   return (

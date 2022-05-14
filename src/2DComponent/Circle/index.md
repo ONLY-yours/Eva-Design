@@ -15,7 +15,7 @@ nav:
 
 ```tsx
 import React from 'react';
-import { Circle, BasicProvider, PointLight } from 'Eva-Design';
+import { Circle, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (

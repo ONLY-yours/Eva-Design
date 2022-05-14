@@ -14,7 +14,7 @@ nav:
 
 ```tsx
 import React from 'react';
-import { ObjModel } from 'Eva-Design';
+import { ObjModel } from 'eva-design-three';
 import { Canvas } from '@react-three/fiber';
 
 export default () => {
@@ -34,7 +34,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { ObjModel } from 'Eva-Design';
+import { ObjModel } from 'eva-design-three';
 import { Canvas } from '@react-three/fiber';
 
 export default () => {

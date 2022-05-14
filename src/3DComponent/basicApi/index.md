@@ -18,7 +18,7 @@ nav:
 
 ```tsx
 import React from 'react';
-import { Box, BasicProvider, PointLight } from 'Eva-Design';
+import { Box, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (
@@ -36,7 +36,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box, BasicProvider, PointLight } from 'Eva-Design';
+import { Box, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (
@@ -54,7 +54,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box, BasicProvider, PointLight } from 'Eva-Design';
+import { Box, BasicProvider, PointLight } from 'eva-design-three';
 export default () => {
   return (
     <BasicProvider>
@@ -73,7 +73,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box, BasicProvider, PointLight } from 'Eva-Design';
+import { Box, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (
@@ -93,7 +93,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Box, BasicProvider, PointLight } from 'Eva-Design';
+import { Box, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (

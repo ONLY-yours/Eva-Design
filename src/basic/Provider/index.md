@@ -20,7 +20,7 @@ BasicProvider 基本内容提供組件。你可以通过设置 BasicProvider 来
 
 ```tsx
 import React from 'react';
-import { BasicProvider, Box, PointLight } from 'Eva-Design';
+import { BasicProvider, Box, PointLight } from 'eva-design-three';
 
 export default () => {
   return (

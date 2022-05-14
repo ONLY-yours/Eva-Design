@@ -15,7 +15,7 @@ nav:
 
 ```tsx
 import React from 'react';
-import { Cylinder, BasicProvider, PointLight } from 'Eva-Design';
+import { Cylinder, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (
@@ -33,7 +33,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Cylinder, BasicProvider, PointLight } from 'Eva-Design';
+import { Cylinder, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (
@@ -51,7 +51,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Cylinder, BasicProvider, PointLight } from 'Eva-Design';
+import { Cylinder, BasicProvider, PointLight } from 'eva-design-three';
 export default () => {
   return (
     <BasicProvider>
@@ -70,7 +70,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Cylinder, BasicProvider, PointLight } from 'Eva-Design';
+import { Cylinder, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (
@@ -90,7 +90,7 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { Cylinder, BasicProvider, PointLight } from 'Eva-Design';
+import { Cylinder, BasicProvider, PointLight } from 'eva-design-three';
 
 export default () => {
   return (
