@@ -1,4 +1,5 @@
 export { BasicProvider } from './basic/Provider';
+export { BasicEnvironment } from './basic/Environment';
 export { BasicMesh } from './basic/Mesh';
 export { AmbientLight, PointLight } from './basic/Light';
 export {

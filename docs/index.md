@@ -1,9 +1,9 @@
 ---
 hero:
   title: Eva-Design
-  desc: Eva-Design site example
+  desc: 一个简单通用的 React 3D 组件库
   actions:
-    - text: Getting Started
+    - text: 从这里开始
       link: /components
 features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png

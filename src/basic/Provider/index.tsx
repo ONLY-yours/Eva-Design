@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
+import { BasicEnvironment } from '../Environment';
 
 type BasicProviderProps = {
   children: any;
@@ -20,6 +21,11 @@ type BasicProviderProps = {
    * @default false
    *  */
   OrbControlsSetting: boolean | any;
+  /**
+   * @description 额外的渲染内容
+   * @default null
+   *  */
+  externalRender: React.ReactNode;
 };
 
 const BasicProvider = (props: BasicProviderProps) => {
@@ -27,21 +33,46 @@ const BasicProvider = (props: BasicProviderProps) => {
     defaultLightSetting = true,
     EnvironmentSetting = false,
     OrbControlsSetting = false,
+    externalRender,
   } = props || {};
+
+  const { environmentRender, ...rest } = EnvironmentSetting;
+  const { OrbControlsRender } = OrbControlsSetting;
+
+  console.log('environmentRender', environmentRender);
+
   return (
     <Canvas>
       <Suspense fallback={null}>
         <>
-          {EnvironmentSetting && <Environment preset="sunset" background />}
-          {OrbControlsSetting && <OrbitControls />}
-          {props.children.map((item: any) => {
+          {EnvironmentSetting ? (
+            environmentRender ? (
+              <>{environmentRender}</>
+            ) : (
+              <BasicEnvironment enviromentScreen="city" isbackground={true} {...rest} />
+            )
+          ) : (
+            <></>
+          )}
+          {OrbControlsSetting ? (
+            OrbControlsRender ? (
+              <>{OrbControlsRender}</>
+            ) : (
+              <OrbitControls />
+            )
+          ) : (
+            <></>
+          )}
+          {/* {props.children.map((item: any) => {
             // if (item.type.name === 'Sphere') {
             //   return item;
             // }
             return item;
-          })}
+          })} */}
+          {props.children}
           {defaultLightSetting && <ambientLight {...defaultLightSetting} />}
           <meshStandardMaterial color={'orange'} />
+          {externalRender}
         </>
       </Suspense>
     </Canvas>
