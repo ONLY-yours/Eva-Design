@@ -9,6 +9,8 @@ export default {
   // more config: https://d.umijs.org/config
   styles: [
     '.__dumi-default-layout-content > .markdown:first-child:empty, button.__dumi-default-icon[role="codesandbox"] { display: none; }',
+    '.__dumi-default-layout-hero { background: url("./eva-background.jpg") no-repeat; background-size: cover; } ',
+    '  h1,h2 { color: rgba(132,102,220,1) !important;}',
   ],
   menus: {
     // 需要自定义侧边菜单的路径，没有配置的路径还是会使用自动生成的配置
